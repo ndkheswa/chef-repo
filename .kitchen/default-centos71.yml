@@ -1,0 +1,6 @@
+---
+hostname: 127.0.0.1
+port: '2222'
+username: root
+ssh_key: "/Users/ndodakheswa/chef-repo/.kitchen/kitchen-vagrant/kitchen-chef-repo-default-centos71/.vagrant/machines/default/virtualbox/private_key"
+last_action: create

@@ -1,0 +1,70 @@
+I, [2015-09-20T18:55:17.397885 #69137]  INFO -- default-centos71: -----> Converging <default-centos71>...
+I, [2015-09-20T18:55:17.398547 #69137]  INFO -- default-centos71: Preparing files for transfer
+I, [2015-09-20T18:55:17.398677 #69137]  INFO -- default-centos71: Preparing dna.json
+I, [2015-09-20T18:55:17.399079 #69137]  INFO -- default-centos71: Preparing cookbooks from project directory
+I, [2015-09-20T18:55:17.494331 #69137]  INFO -- default-centos71: Removing non-cookbook files before transfer
+I, [2015-09-20T18:55:17.530915 #69137]  INFO -- default-centos71: Preparing data_bags
+I, [2015-09-20T18:55:17.531441 #69137]  INFO -- default-centos71: Preparing environments
+I, [2015-09-20T18:55:17.532014 #69137]  INFO -- default-centos71: Preparing nodes
+I, [2015-09-20T18:55:17.532532 #69137]  INFO -- default-centos71: Preparing roles
+I, [2015-09-20T18:55:17.533522 #69137]  INFO -- default-centos71: Preparing validation.pem
+I, [2015-09-20T18:55:17.534351 #69137]  INFO -- default-centos71: Preparing client.rb
+I, [2015-09-20T18:55:17.905617 #69137]  INFO -- default-centos71: /etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+I, [2015-09-20T18:55:17.916945 #69137]  INFO -- default-centos71: -----> Chef Omnibus installation detected (12.4.1)
+I, [2015-09-20T18:55:18.080645 #69137]  INFO -- default-centos71: /etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+I, [2015-09-20T18:55:18.113821 #69137]  INFO -- default-centos71: Transferring files to <default-centos71>
+I, [2015-09-20T18:55:19.135058 #69137]  INFO -- default-centos71: /etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+I, [2015-09-20T18:55:20.512146 #69137]  INFO -- default-centos71: Starting Chef Client, version 12.4.1
+I, [2015-09-20T18:55:31.574949 #69137]  INFO -- default-centos71: [2015-09-20T16:55:30+00:00] WARN: Child with name 'dna.json' found in multiple directories: /tmp/kitchen/dna.json and /tmp/kitchen/dna.json
+I, [2015-09-20T18:55:31.586648 #69137]  INFO -- default-centos71: resolving cookbooks for run list: ["jenkins::master"]
+I, [2015-09-20T18:55:31.861147 #69137]  INFO -- default-centos71: 
+I, [2015-09-20T18:55:31.861217 #69137]  INFO -- default-centos71: ================================================================================
+I, [2015-09-20T18:55:31.861245 #69137]  INFO -- default-centos71: Error Resolving Cookbooks for Run List:
+I, [2015-09-20T18:55:31.861299 #69137]  INFO -- default-centos71: ================================================================================
+I, [2015-09-20T18:55:31.861323 #69137]  INFO -- default-centos71: 
+I, [2015-09-20T18:55:31.861345 #69137]  INFO -- default-centos71: Missing Cookbooks:
+I, [2015-09-20T18:55:31.861368 #69137]  INFO -- default-centos71: ------------------
+I, [2015-09-20T18:55:31.861391 #69137]  INFO -- default-centos71: No such cookbook: apache2
+I, [2015-09-20T18:55:31.861413 #69137]  INFO -- default-centos71: 
+I, [2015-09-20T18:55:31.861435 #69137]  INFO -- default-centos71: Expanded Run List:
+I, [2015-09-20T18:55:31.861457 #69137]  INFO -- default-centos71: ------------------
+I, [2015-09-20T18:55:31.861479 #69137]  INFO -- default-centos71: * jenkins::master
+I, [2015-09-20T18:55:31.861501 #69137]  INFO -- default-centos71: 
+I, [2015-09-20T18:55:31.861523 #69137]  INFO -- default-centos71: 
+I, [2015-09-20T18:55:31.861545 #69137]  INFO -- default-centos71: Running handlers:
+I, [2015-09-20T18:55:31.861568 #69137]  INFO -- default-centos71: [2015-09-20T16:55:30+00:00] ERROR: Running exception handlers
+I, [2015-09-20T18:55:31.861592 #69137]  INFO -- default-centos71: Running handlers complete
+I, [2015-09-20T18:55:31.861615 #69137]  INFO -- default-centos71: [2015-09-20T16:55:30+00:00] ERROR: Exception handlers complete
+I, [2015-09-20T18:55:31.861638 #69137]  INFO -- default-centos71: Chef Client failed. 0 resources updated in 11.371024508 seconds
+I, [2015-09-20T18:55:31.894300 #69137]  INFO -- default-centos71: [2015-09-20T16:55:30+00:00] ERROR: undefined method `cheffish' for nil:NilClass
+I, [2015-09-20T18:55:32.498960 #69137]  INFO -- default-centos71: [2015-09-20T16:55:31+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)
+E, [2015-09-20T18:55:32.573155 #69137] ERROR -- default-centos71: Converge failed on instance <default-centos71>.
+E, [2015-09-20T18:55:32.573395 #69137] ERROR -- default-centos71: ------Exception-------
+E, [2015-09-20T18:55:32.573454 #69137] ERROR -- default-centos71: Class: Kitchen::ActionFailed
+E, [2015-09-20T18:55:32.573487 #69137] ERROR -- default-centos71: Message: SSH exited (1) for command: [sh -c '
+
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889
+']
+E, [2015-09-20T18:55:32.573525 #69137] ERROR -- default-centos71: ---Nested Exception---
+E, [2015-09-20T18:55:32.573558 #69137] ERROR -- default-centos71: Class: Kitchen::Transport::SshFailed
+E, [2015-09-20T18:55:32.573589 #69137] ERROR -- default-centos71: Message: SSH exited (1) for command: [sh -c '
+
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889
+']
+E, [2015-09-20T18:55:32.573669 #69137] ERROR -- default-centos71: ------Backtrace-------
+E, [2015-09-20T18:55:32.573700 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/provisioner/base.rb:74:in `rescue in call'
+E, [2015-09-20T18:55:32.573733 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/provisioner/base.rb:77:in `call'
+E, [2015-09-20T18:55:32.573766 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:366:in `block in converge_action'
+E, [2015-09-20T18:55:32.573799 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:488:in `call'
+E, [2015-09-20T18:55:32.573831 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:488:in `synchronize_or_call'
+E, [2015-09-20T18:55:32.573867 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:453:in `block in action'
+E, [2015-09-20T18:55:32.573900 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2015-09-20T18:55:32.573934 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:452:in `action'
+E, [2015-09-20T18:55:32.573969 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:362:in `converge_action'
+E, [2015-09-20T18:55:32.574005 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:341:in `block in transition_to'
+E, [2015-09-20T18:55:32.574037 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:340:in `each'
+E, [2015-09-20T18:55:32.574069 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:340:in `transition_to'
+E, [2015-09-20T18:55:32.574148 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:138:in `converge'
+E, [2015-09-20T18:55:32.574179 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command.rb:176:in `public_send'
+E, [2015-09-20T18:55:32.574208 #69137] ERROR -- default-centos71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command.rb:176:in `block (2 levels) in run_action'
+E, [2015-09-20T18:55:32.574239 #69137] ERROR -- default-centos71: ----------------------

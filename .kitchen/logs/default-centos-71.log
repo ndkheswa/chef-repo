@@ -1,0 +1,533 @@
+I, [2015-09-20T18:28:16.827724 #68327]  INFO -- default-centos-71: -----> Converging <default-centos-71>...
+I, [2015-09-20T18:28:16.828709 #68327]  INFO -- default-centos-71: Preparing files for transfer
+I, [2015-09-20T18:28:16.828841 #68327]  INFO -- default-centos-71: Preparing dna.json
+I, [2015-09-20T18:28:16.829378 #68327]  INFO -- default-centos-71: Preparing cookbooks from project directory
+I, [2015-09-20T18:28:16.878170 #68327]  INFO -- default-centos-71: Removing non-cookbook files before transfer
+I, [2015-09-20T18:28:16.891634 #68327]  INFO -- default-centos-71: Preparing data_bags
+I, [2015-09-20T18:28:16.892153 #68327]  INFO -- default-centos-71: Preparing environments
+I, [2015-09-20T18:28:16.892688 #68327]  INFO -- default-centos-71: Preparing nodes
+I, [2015-09-20T18:28:16.893138 #68327]  INFO -- default-centos-71: Preparing roles
+I, [2015-09-20T18:28:16.893706 #68327]  INFO -- default-centos-71: Preparing validation.pem
+I, [2015-09-20T18:28:16.894192 #68327]  INFO -- default-centos-71: Preparing client.rb
+I, [2015-09-20T18:28:17.265364 #68327]  INFO -- default-centos-71: /etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+I, [2015-09-20T18:28:17.271996 #68327]  INFO -- default-centos-71: -----> Installing Chef Omnibus (install only if missing)
+I, [2015-09-20T18:28:17.276061 #68327]  INFO -- default-centos-71: Downloading file:///mnt/share/install_chef_rpm.sh to file /tmp/install.sh
+I, [2015-09-20T18:28:17.276147 #68327]  INFO -- default-centos-71: Trying wget...
+I, [2015-09-20T18:28:17.284953 #68327]  INFO -- default-centos-71: Trying curl...
+I, [2015-09-20T18:28:17.294747 #68327]  INFO -- default-centos-71: Trying python...
+I, [2015-09-20T18:28:17.367959 #68327]  INFO -- default-centos-71: Unable to download file:///mnt/share/install_chef_rpm.sh to /tmp/install.sh, aborting
+I, [2015-09-20T18:28:17.368053 #68327]  INFO -- default-centos-71: \nDEBUG OUTPUT FOLLOWS:\n\nSTDERR from wget:\n\nfile:///mnt/share/install_chef_rpm.sh: Unsupported scheme 'file'.\n\nSTDERR from curl:\n\n\n\nSTDERR from python:\n\nTraceback (most recent call last):
+I, [2015-09-20T18:28:17.368109 #68327]  INFO -- default-centos-71:   File "<string>", line 1, in <module>
+I, [2015-09-20T18:28:17.368151 #68327]  INFO -- default-centos-71:   File "/usr/lib64/python2.7/urllib2.py", line 127, in urlopen
+I, [2015-09-20T18:28:17.368193 #68327]  INFO -- default-centos-71:     return _opener.open(url, data, timeout)
+I, [2015-09-20T18:28:17.368229 #68327]  INFO -- default-centos-71:   File "/usr/lib64/python2.7/urllib2.py", line 404, in open
+I, [2015-09-20T18:28:17.368268 #68327]  INFO -- default-centos-71:     response = self._open(req, data)
+I, [2015-09-20T18:28:17.368303 #68327]  INFO -- default-centos-71:   File "/usr/lib64/python2.7/urllib2.py", line 422, in _open
+I, [2015-09-20T18:28:17.368340 #68327]  INFO -- default-centos-71:     '_open', req)
+I, [2015-09-20T18:28:17.368410 #68327]  INFO -- default-centos-71:   File "/usr/lib64/python2.7/urllib2.py", line 382, in _call_chain
+I, [2015-09-20T18:28:17.368470 #68327]  INFO -- default-centos-71:     result = func(*args)
+I, [2015-09-20T18:28:17.368512 #68327]  INFO -- default-centos-71:   File "/usr/lib64/python2.7/urllib2.py", line 1319, in file_open
+I, [2015-09-20T18:28:17.368540 #68327]  INFO -- default-centos-71:     return self.open_local_file(req)
+I, [2015-09-20T18:28:17.368564 #68327]  INFO -- default-centos-71:   File "/usr/lib64/python2.7/urllib2.py", line 1359, in open_local_file
+I, [2015-09-20T18:28:17.368596 #68327]  INFO -- default-centos-71:     raise URLError(msg)
+I, [2015-09-20T18:28:17.368621 #68327]  INFO -- default-centos-71: urllib2.URLError: <urlopen error [Errno 2] No such file or directory: '/mnt/share/install_chef_rpm.sh'>\n
+E, [2015-09-20T18:28:17.387331 #68327] ERROR -- default-centos-71: Converge failed on instance <default-centos-71>.
+E, [2015-09-20T18:28:17.387504 #68327] ERROR -- default-centos-71: ------Exception-------
+E, [2015-09-20T18:28:17.387544 #68327] ERROR -- default-centos-71: Class: Kitchen::ActionFailed
+E, [2015-09-20T18:28:17.387584 #68327] ERROR -- default-centos-71: Message: SSH exited (10) for command: [sh -c '
+
+chef_omnibus_root="/opt/chef"
+chef_omnibus_url="file:///mnt/share/install_chef_rpm.sh"
+install_flags=""
+pretty_version="install only if missing"
+sudo_sh="sudo -E sh"
+version="true"
+
+tmp_stderr="/tmp/stderr";
+
+# capture_tmp_stderr SOURCE
+capture_tmp_stderr() {
+  # spool up $tmp_stderr from all the commands we called
+  if test -f "$tmp_stderr"; then
+    output="`cat $tmp_stderr`";
+    stderr_results="${stderr_results}\nSTDERR from $1:\n\n${output}\n";
+    rm $tmp_stderr;
+  fi
+}
+
+# do_curl URL FILENAME
+do_curl() {
+  echo "Trying curl...";
+  curl -sL -D "$tmp_stderr" "$1" > "$2";
+  ec=$?;
+  # check for 404
+  grep "404 Not Found" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "curl";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_download URL FILENAME
+do_download() {
+  echo "Downloading ${1} to file ${2}";
+
+  exists wget;
+  if test $? -eq 0; then
+    do_wget "$1" "$2" && return 0;
+  fi
+
+  exists curl;
+  if test $? -eq 0; then
+    do_curl "$1" "$2" && return 0;
+  fi
+
+  exists fetch;
+  if test $? -eq 0; then
+    do_fetch "$1" "$2" && return 0;
+  fi
+
+  exists python;
+  if test $? -eq 0; then
+    do_python "$1" "$2" && return 0;
+  fi
+
+  exists perl;
+  if test $? -eq 0; then
+    do_perl "$1" "$2" && return 0;
+  fi
+
+  unable_to_download "$1" "$2";
+}
+
+# do_fetch URL FILENAME
+do_fetch() {
+  echo "Trying fetch...";
+  fetch -o "$2" "$1" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "Not Found" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "fetch";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_perl URL FILENAME
+do_perl() {
+  echo "Trying perl...";
+  perl -e "use LWP::Simple; getprint(\$ARGV[0]);" "$1" > "$2" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "404 Not Found" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "perl";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_python URL FILENAME
+do_python() {
+  echo "Trying python...";
+  python -c "import sys,urllib2 ; sys.stdout.write(urllib2.urlopen(sys.argv[1]).read())" "$1" > "$2" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "HTTP Error 404" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "python";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_wget URL FILENAME
+do_wget() {
+  echo "Trying wget...";
+  wget -O "$2" "$1" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "ERROR 404" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "wget";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# exists COMMAND
+exists() {
+  if command -v "$1" >/dev/null 2>&1; then
+    return 0;
+  else
+    return 1;
+  fi
+}
+
+# http_404_error URL
+http_404_error() {
+  echo ">>>>>> Downloading ${1} resulted in an HTTP/404, aborting";
+  exit 40;
+}
+
+# should_update_chef ROOT VERSION
+should_update_chef() {
+  if test ! -d "$1"; then
+    return 0;
+  elif test "$2" = "true"; then
+    return 1;
+  elif test "$2" = "latest"; then
+    return 0;
+  fi
+
+  if test -f "${1}/version-manifest.txt"; then
+    chef_version="`head -n 1 ${1}/version-manifest.txt | cut -d \" \" -f 2`";
+  else
+    chef_version="`${1}/bin/chef-solo -v | cut -d \" \" -f 2`";
+  fi
+
+  echo "$chef_version" | grep "^${2}" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    return 1;
+  else
+    echo "${2}" | grep "^$chef_version" 2>&1 >/dev/null;
+    if test $? -eq 0; then
+      return 1;
+    else
+      return 0;
+    fi
+  fi
+}
+
+# unable_to_download URL FILE
+unable_to_download() {
+  echo "Unable to download $1 to $2, aborting";
+
+  if test "x${stderr_results}" != "x"; then
+    echo "\nDEBUG OUTPUT FOLLOWS:\n${stderr_results}";
+  fi
+
+  exit 10;
+}
+
+# main
+main() {
+  should_update_chef "$chef_omnibus_root" "$version"
+  if test $? -eq 0; then
+    echo "-----> Installing Chef Omnibus (${pretty_version})";
+
+    # solaris 10 lacks recent enough credentials, so http url is used
+    platform="`/usr/bin/uname -s 2>/dev/null`";
+    platform_version="`/usr/bin/uname -r 2>/dev/null`";
+    if test "x${platform}" = "xSunOS" && test "x${platform_version}" = "x5.10"; then
+      chef_omnibus_url=`echo "$chef_omnibus_url" | sed -e "s/https/http/"`;
+    fi
+
+    do_download "$chef_omnibus_url" /tmp/install.sh;
+    $sudo_sh /tmp/install.sh $install_flags;
+  else
+    echo "-----> Chef Omnibus installation detected (${pretty_version})";
+  fi
+}
+
+# augment path in an attempt to find a download program
+PATH="${PATH}:/opt/local/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/sfw/bin";
+export PATH;
+
+main
+']
+E, [2015-09-20T18:28:17.387634 #68327] ERROR -- default-centos-71: ---Nested Exception---
+E, [2015-09-20T18:28:17.387663 #68327] ERROR -- default-centos-71: Class: Kitchen::Transport::SshFailed
+E, [2015-09-20T18:28:17.387684 #68327] ERROR -- default-centos-71: Message: SSH exited (10) for command: [sh -c '
+
+chef_omnibus_root="/opt/chef"
+chef_omnibus_url="file:///mnt/share/install_chef_rpm.sh"
+install_flags=""
+pretty_version="install only if missing"
+sudo_sh="sudo -E sh"
+version="true"
+
+tmp_stderr="/tmp/stderr";
+
+# capture_tmp_stderr SOURCE
+capture_tmp_stderr() {
+  # spool up $tmp_stderr from all the commands we called
+  if test -f "$tmp_stderr"; then
+    output="`cat $tmp_stderr`";
+    stderr_results="${stderr_results}\nSTDERR from $1:\n\n${output}\n";
+    rm $tmp_stderr;
+  fi
+}
+
+# do_curl URL FILENAME
+do_curl() {
+  echo "Trying curl...";
+  curl -sL -D "$tmp_stderr" "$1" > "$2";
+  ec=$?;
+  # check for 404
+  grep "404 Not Found" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "curl";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_download URL FILENAME
+do_download() {
+  echo "Downloading ${1} to file ${2}";
+
+  exists wget;
+  if test $? -eq 0; then
+    do_wget "$1" "$2" && return 0;
+  fi
+
+  exists curl;
+  if test $? -eq 0; then
+    do_curl "$1" "$2" && return 0;
+  fi
+
+  exists fetch;
+  if test $? -eq 0; then
+    do_fetch "$1" "$2" && return 0;
+  fi
+
+  exists python;
+  if test $? -eq 0; then
+    do_python "$1" "$2" && return 0;
+  fi
+
+  exists perl;
+  if test $? -eq 0; then
+    do_perl "$1" "$2" && return 0;
+  fi
+
+  unable_to_download "$1" "$2";
+}
+
+# do_fetch URL FILENAME
+do_fetch() {
+  echo "Trying fetch...";
+  fetch -o "$2" "$1" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "Not Found" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "fetch";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_perl URL FILENAME
+do_perl() {
+  echo "Trying perl...";
+  perl -e "use LWP::Simple; getprint(\$ARGV[0]);" "$1" > "$2" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "404 Not Found" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "perl";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_python URL FILENAME
+do_python() {
+  echo "Trying python...";
+  python -c "import sys,urllib2 ; sys.stdout.write(urllib2.urlopen(sys.argv[1]).read())" "$1" > "$2" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "HTTP Error 404" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "python";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# do_wget URL FILENAME
+do_wget() {
+  echo "Trying wget...";
+  wget -O "$2" "$1" 2>"$tmp_stderr";
+  ec=$?;
+  # check for 404
+  grep "ERROR 404" "$tmp_stderr" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    http_404_error "$1";
+  fi
+
+  # check for bad return status or empty output
+  if test $ec -ne 0 || test ! -s "$2"; then
+    capture_tmp_stderr "wget";
+    return 1;
+  else
+    echo "Download complete.";
+    return 0;
+  fi
+}
+
+# exists COMMAND
+exists() {
+  if command -v "$1" >/dev/null 2>&1; then
+    return 0;
+  else
+    return 1;
+  fi
+}
+
+# http_404_error URL
+http_404_error() {
+  echo ">>>>>> Downloading ${1} resulted in an HTTP/404, aborting";
+  exit 40;
+}
+
+# should_update_chef ROOT VERSION
+should_update_chef() {
+  if test ! -d "$1"; then
+    return 0;
+  elif test "$2" = "true"; then
+    return 1;
+  elif test "$2" = "latest"; then
+    return 0;
+  fi
+
+  if test -f "${1}/version-manifest.txt"; then
+    chef_version="`head -n 1 ${1}/version-manifest.txt | cut -d \" \" -f 2`";
+  else
+    chef_version="`${1}/bin/chef-solo -v | cut -d \" \" -f 2`";
+  fi
+
+  echo "$chef_version" | grep "^${2}" 2>&1 >/dev/null;
+  if test $? -eq 0; then
+    return 1;
+  else
+    echo "${2}" | grep "^$chef_version" 2>&1 >/dev/null;
+    if test $? -eq 0; then
+      return 1;
+    else
+      return 0;
+    fi
+  fi
+}
+
+# unable_to_download URL FILE
+unable_to_download() {
+  echo "Unable to download $1 to $2, aborting";
+
+  if test "x${stderr_results}" != "x"; then
+    echo "\nDEBUG OUTPUT FOLLOWS:\n${stderr_results}";
+  fi
+
+  exit 10;
+}
+
+# main
+main() {
+  should_update_chef "$chef_omnibus_root" "$version"
+  if test $? -eq 0; then
+    echo "-----> Installing Chef Omnibus (${pretty_version})";
+
+    # solaris 10 lacks recent enough credentials, so http url is used
+    platform="`/usr/bin/uname -s 2>/dev/null`";
+    platform_version="`/usr/bin/uname -r 2>/dev/null`";
+    if test "x${platform}" = "xSunOS" && test "x${platform_version}" = "x5.10"; then
+      chef_omnibus_url=`echo "$chef_omnibus_url" | sed -e "s/https/http/"`;
+    fi
+
+    do_download "$chef_omnibus_url" /tmp/install.sh;
+    $sudo_sh /tmp/install.sh $install_flags;
+  else
+    echo "-----> Chef Omnibus installation detected (${pretty_version})";
+  fi
+}
+
+# augment path in an attempt to find a download program
+PATH="${PATH}:/opt/local/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/sfw/bin";
+export PATH;
+
+main
+']
+E, [2015-09-20T18:28:17.387715 #68327] ERROR -- default-centos-71: ------Backtrace-------
+E, [2015-09-20T18:28:17.387746 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/provisioner/base.rb:74:in `rescue in call'
+E, [2015-09-20T18:28:17.387770 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/provisioner/base.rb:77:in `call'
+E, [2015-09-20T18:28:17.387792 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:366:in `block in converge_action'
+E, [2015-09-20T18:28:17.387820 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:488:in `call'
+E, [2015-09-20T18:28:17.387841 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:488:in `synchronize_or_call'
+E, [2015-09-20T18:28:17.387869 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:453:in `block in action'
+E, [2015-09-20T18:28:17.387890 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2015-09-20T18:28:17.387910 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:452:in `action'
+E, [2015-09-20T18:28:17.387935 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:362:in `converge_action'
+E, [2015-09-20T18:28:17.387972 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:341:in `block in transition_to'
+E, [2015-09-20T18:28:17.388003 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:340:in `each'
+E, [2015-09-20T18:28:17.388025 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:340:in `transition_to'
+E, [2015-09-20T18:28:17.388045 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/instance.rb:138:in `converge'
+E, [2015-09-20T18:28:17.388065 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command.rb:176:in `public_send'
+E, [2015-09-20T18:28:17.388096 #68327] ERROR -- default-centos-71: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command.rb:176:in `block (2 levels) in run_action'
+E, [2015-09-20T18:28:17.388116 #68327] ERROR -- default-centos-71: ----------------------
