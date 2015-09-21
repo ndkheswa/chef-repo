@@ -45,6 +45,7 @@ when 'debian'
   end
 when 'rhel'
   include_recipe 'yum::default'
+  include_recipe 'java::default'
 
   yum_repository 'jenkins-ci' do
     baseurl node['jenkins']['master']['repository']

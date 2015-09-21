@@ -39,6 +39,7 @@ suites:
   - name: default
     run_list:
       - recipe[jenkins::master]
+#      - recipe[jenkins::node]
 #      - recipe[myapache-cookbook::default]
 #      - recipe[myapache-cookbook::default2]
 #      - recipe[myapache-cookbook::ssl]
